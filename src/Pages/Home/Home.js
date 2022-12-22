@@ -6,6 +6,7 @@ import About from '../About/About';
 import Customer from '../Customer/Customer';
 import Heroarea from '../Heroarea/Heroarea';
 import Service from '../Service/Service';
+import Testimonial from '../Testimonial/Testimonial';
 // import HomeService from './HomeService/HomeService';
 
 const Home = () => {
@@ -41,6 +42,9 @@ const Home = () => {
             </div>
                 <div>
                     <Customer></Customer>
+                </div>
+                <div>
+                    <Testimonial></Testimonial>
                 </div>
             </div>
         </HelmetProvider>

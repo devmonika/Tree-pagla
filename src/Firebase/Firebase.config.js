@@ -11,6 +11,13 @@ const firebaseConfig = {
   storageBucket:process.env.REACT_APP_storageBucket,
   messagingSenderId:process.env.REACT_APP_messagingSenderId,
   appId:process.env.REACT_APP_appId,
+
+  // apiKey: "AIzaSyCZRvXpcbxWcK9r2AMyDIVtLB9eCxA1onc",
+  // authDomain: "tree-pagla.firebaseapp.com",
+  // projectId: "tree-pagla",
+  // storageBucket: "tree-pagla.appspot.com",
+  // messagingSenderId: "89326774853",
+  // appId: "1:89326774853:web:9a81afa9cacb6a3d9b912c"
 };
 
 // Initialize Firebase

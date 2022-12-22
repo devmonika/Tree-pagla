@@ -9,7 +9,7 @@ const Footer = () => {
                 <p className="font-bold">
                 TreePagla <br/>Providing services since 2019
                 </p> 
-                <p>Copyright © 2022 - All right reserved</p>
+                <p>Copyright © 2019 - All right reserved</p>
             </div> 
             </footer>
         </div>
