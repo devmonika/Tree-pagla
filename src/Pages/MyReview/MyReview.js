@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/Authprovider';
 import Review from '../Review/Review';
-
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 const MyReview = () => {
     const {user} = useContext(AuthContext);
     const[reviews, setReviews] = useState([]);
@@ -27,7 +28,10 @@ const MyReview = () => {
         .then(data => {
           console.log(data);
           if(data.deletedCount > 0){
-            alert("Data Deleted Successfully!");
+            toast.success("Data Deleted Successfully!", {
+              position: toast.POSITION.TOP_CENTER
+            });
+            // alert("Data Deleted Successfully!");
             setReload(reload+1);           
           }
         })
@@ -53,7 +57,10 @@ const MyReview = () => {
           if(data.modifiedCount > 0){
             const element = document.getElementById('my-modal');
             element.checked = false;
-            alert("Updated Successfully!");
+            toast.success("Updated Successfully!", {
+              position: toast.POSITION.TOP_CENTER
+            });
+            
             setReload(reload+1);       
           }
         })
@@ -70,7 +77,7 @@ const MyReview = () => {
             reviews.map(review => <Review key={review._id} review={review} updateReviewLoading={updateReviewLoading} handleDelete={handleDelete} handleUpdate={handleUpdate} setUpdateReview={setUpdateReview}></Review>) 
           }
           
-          
+          <ToastContainer></ToastContainer>
         </div>
       
     );

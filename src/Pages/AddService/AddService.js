@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Context/Authprovider';
-
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 const AddService = () => {
     const {user} = useContext(AuthContext);
 
@@ -22,9 +23,9 @@ const AddService = () => {
             email,
 
         }
-        if(details.length>100){
-            alert("Please write Atleast 100 letters");
-        };
+        // if(details.length>100){
+        //     alert("Please write Atleast 100 letters");
+        // };
 
         fetch('https://tree-pagla-server.vercel.app/addservices',{
             method: 'POST',
@@ -37,7 +38,10 @@ const AddService = () => {
         .then(data=>{
             console.log(data)
             if(data.acknowledged){
-                alert('Service Added Successfully!');
+                toast.success("Service Added Successfully!", {
+                    position: toast.POSITION.TOP_CENTER
+                  });
+                // alert('Service Added Successfully!');
                 form.reset();
             }
         })
@@ -87,6 +91,7 @@ const AddService = () => {
                 </form>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

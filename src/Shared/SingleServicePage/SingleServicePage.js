@@ -6,7 +6,8 @@ import { AuthContext } from '../../Context/Authprovider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import UserReview from '../../Pages/UserReview/UserReview';
-
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 const SingleServicePage = () => {
     const detailsService = useLoaderData();
     // console.log(detailsService);
@@ -55,7 +56,10 @@ const SingleServicePage = () => {
         .then(data=>{
             console.log(data)
             if(data.acknowledged){
-                alert('Review Added Successfully!');
+              toast.success("Review Added Successfully!", {
+                position: toast.POSITION.TOP_CENTER
+              });
+                // alert('Review Added Successfully!');
                 form.reset();
             }
         })
@@ -162,7 +166,7 @@ const SingleServicePage = () => {
     
         </div>
       
-    
+    <ToastContainer></ToastContainer>
         </div>
     );
 };

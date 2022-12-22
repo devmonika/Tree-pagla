@@ -3,7 +3,8 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { webName } from '../../../App';
 import { AuthContext } from '../../../Context/Authprovider';
-
+import { toast, ToastContainer } from 'react-toastify';
+  import "react-toastify/dist/ReactToastify.css";
 const Register = () => {
 
     const {creatUser} = useContext(AuthContext);
@@ -18,6 +19,9 @@ const Register = () => {
         creatUser(email, password)
         .then(result =>{
             const user = result.user;
+            toast.success("User Created !", {
+                position: toast.POSITION.TOP_CENTER
+              });
             console.log(user);
             form.reset();
         })
@@ -59,7 +63,7 @@ const Register = () => {
                     <p className='text-center text-white py-4'>Already have an account? Please <Link to='/login'>Login</Link></p>
                         <button type="submit" class="bg-white block mx-auto text-lime-600 text-sm  rounded shadow-md px-6 py-2">Submit</button>
                     </form>
-                    
+                    <ToastContainer></ToastContainer>
                 </div>
                 
             </div>

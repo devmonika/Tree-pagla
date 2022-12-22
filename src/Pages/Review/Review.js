@@ -22,7 +22,7 @@ const handleChange= event =>{
 
 
       <div className="card lg:card-side bg-base-100 shadow-xl">
-        <figure><img src={detailsService_img} alt="Album"/></figure>
+        <figure><img className='h-80 w-96' src={detailsService_img} alt="Album"/></figure>
           <div className="card-body text-left">
             <h2 className="card-title">{detailsService_name}</h2>
             <p>{message}</p>
